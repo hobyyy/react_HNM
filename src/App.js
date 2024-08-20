@@ -3,7 +3,9 @@ import { Routes, Route } from 'react-router';
 import ProductAll from './page/ProductAll';
 import ProductDetail from './page/ProductDetail';
 import Login from './page/Login';
+import Navbar from './component/Navbar';
 // 1. 전체 상품 페이지, 로그인, 상품 상세 페이지
+// 1-1. navbar : 전체 페이지 공통
 // 2. 전체 상품 페이지 : 전체 상품을 볼 수 있다.
 // 3. 로그인 버튼 : 로그인 페이지가 나온다.
 // 4. 상품을 클릭했을 때, 로그인이 안되어 있을 경우 로그인 페이지가 나온다.
@@ -14,6 +16,7 @@ import Login from './page/Login';
 function App() {
   return (
     <div >
+      <Navbar/>
       <Routes>
         <Route path="" element={<ProductAll/>}/>
         <Route path="/login" element={<Login/>}/>
