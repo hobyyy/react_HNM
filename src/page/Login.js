@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, Form, Container } from 'react-bootstrap';
-
+import { useNavigate } from 'react-router';
 // Form의 특징
 // 유저한테 입력받은 정보를 가지고 벡엔드로 보내고 싶을 때
 // 로그인을 하는순간 서버에 요청을해서 refresh됌 (redirect랑 뭐가 다르지?)
@@ -9,10 +9,13 @@ import { Button, Form, Container } from 'react-bootstrap';
 // Button에 onClick으로 이벤트를 주면 안됌 
 // Form에 onSubmit으로 이벤트를 줘야함
 // refresh를 막아야함 ; event.preventDefault() 꼭쓰기!
-const Login = () => {
+const Login = ({setAuthenticate}) => {
+  const usenavigate = useNavigate();
   const loginUser = (event) => {
     event.preventDefault(); // Form의 refresh를 막는 코드
-    console.log('login')
+    // console.log('login')
+    setAuthenticate(true);
+    usenavigate('/');
   }
   return (
     <Container className='login-container'>
