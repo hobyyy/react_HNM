@@ -2,13 +2,18 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-regular-svg-icons'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { useNavigate } from 'react-router'
 
-const navbar = () => {
+const Navbar = () => {
   const menuList = ['여성', 'Divided', '남성', '신생아/유아', '아동','H&M Home', 'Sale', '지속가능성']
+  const navigate = useNavigate();
+  const gotoLogin = () => {
+    navigate('/login');
+  }
   return (
     <div>
       <div>
-        <div className='login-button'>
+        <div className='login-button' onClick={gotoLogin}>
           <FontAwesomeIcon icon={faUser}/>
           <div>Login</div>
         </div>
@@ -16,7 +21,7 @@ const navbar = () => {
       <div className='nav-section'>
         <img
           width={100} 
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/H%26M-Logo.svg/1418px-H%26M-Logo.svg.png"
+          // src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/H%26M-Logo.svg/1418px-H%26M-Logo.svg.png"
         />
       </div>
       <div className='menu-area'>
@@ -35,4 +40,4 @@ const navbar = () => {
   )
 }
 
-export default navbar
+export default Navbar
