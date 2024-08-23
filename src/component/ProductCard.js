@@ -10,7 +10,7 @@ const ProductCard = ({item}) => {
       <img className='img-style' src={item?.img}/>
       <div className='blink'>{item?.choice == true ? "Conscious choice" : ""}</div>
       <div>{item?.title}</div>
-      <div>{item?.price.toLocaleString('ko-KR')}</div>
+      <div>\{item?.price.toLocaleString('ko-KR')}</div>
       <div className='new-text'>{item?.new == true ? "NEW" : ""}</div>
     </div>
   )
