@@ -78,3 +78,22 @@
   width: 50rem !important;
   margin-top: 8rem;
 }
+
+/* ProductDetail.js */
+.product-img { 
+  display: flex;
+  justify-content: flex-end;
+}
+.product-img > img {
+  width: 25rem;
+}
+.product-selectbox {
+  width: 100px;
+  display: block;
+  margin: 10px 0 20px 0 ;
+}
+.product-button {
+  width: 300px;
+  background-color: black;
+  color: white;
+}
