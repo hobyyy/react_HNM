@@ -22,7 +22,7 @@ const ProductDetail = () => {
         </Col>
         <Col>
           <div>{product?.title}</div>
-          <div>\{product?.price.toLocaleString('ko-KR')}</div>
+          <div>₩{product?.price.toLocaleString('ko-KR')}</div>
           <select className='product-selectbox'>
             {product?.size.map((data) => (
               <option>{data}</option>
