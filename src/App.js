@@ -17,9 +17,12 @@ import PrivateRoute from './route/PrivateRoute';
 // 4. 상품을 클릭했을 때, 로그인이 안되어 있을 경우 로그인 페이지가 나온다.
 // 5. 로그인이 되어 있을 경우 상품 상세 페이지를 볼 수 있다.
 // 6. 상품을 검색할 수 있다.
-
 // 7. 로그아웃 버튼을 클릭하면 로그아웃이 된다.
 // 8. 로그아웃이 되면 상품 상세 페이지를 볼 수 없고, 다시 로그인 페이지가 보인다.
+
+// 도전과제
+// 9. HNM 로고를 클릭하면 전체 상품 페이지로 돌아온다.
+// 10. 모바일 버전에서 메뉴는 사이드 메뉴로 들어간다. 제품 사진들은 한장씩 세로로 나온다.
 
 function App() {
   const [authenticate, setAuthenticate] = useState(false);  // true : 로그인 완료, false : 로그인 안함
@@ -29,7 +32,7 @@ function App() {
   },[authenticate]);
   return (
     <div >
-      <Navbar/>
+      <Navbar authenticate={authenticate} setAuthenticate={setAuthenticate}/>
       <Routes>
         <Route path="" element={<ProductAll/>}/>
         <Route path="/login" element={<Login setAuthenticate={setAuthenticate}/>}/>

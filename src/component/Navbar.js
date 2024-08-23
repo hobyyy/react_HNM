@@ -4,11 +4,17 @@ import { faUser } from '@fortawesome/free-regular-svg-icons'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from 'react-router'
 
-const Navbar = () => {
+const Navbar = ({authenticate, setAuthenticate}) => {
   const menuList = ['여성', 'Divided', '남성', '신생아/유아', '아동','H&M Home', 'Sale', '지속가능성']
   const navigate = useNavigate();
-  const gotoLogin = () => {
-    navigate('/login');
+  const buttonLoginLogout = (event) => {
+    console.log('gotoLogin', event.target.innerHTML)
+    if(event.target.innerHTML==='Login') {
+      navigate('/login');
+    }else{
+      setAuthenticate(!authenticate);
+      navigate('/');
+    }
   }
   // Enter을 입력한 시점에 검색어를 읽어와서 url을 바꿔준다.
   const search = (event) => {
@@ -21,9 +27,9 @@ const Navbar = () => {
   return (
     <div>
       <div>
-        <div className='login-button' onClick={gotoLogin}>
+        <div className='login-button' onClick={(event) => buttonLoginLogout(event)}>
           <FontAwesomeIcon icon={faUser}/>
-          <div>Login</div>
+          <div>{authenticate === true ? 'Logout' : 'Login'}</div>
         </div>
       </div>
       <div className='nav-section'>
