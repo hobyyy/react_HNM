@@ -11,7 +11,7 @@ const ProductCard = ({item}) => {
       <div className='blink'>{item?.choice == true ? "Conscious choice" : ""}</div>
       <div>{item?.title}</div>
       <div>₩{item?.price.toLocaleString('ko-KR')}</div>
-      <div className='new-text'>{item?.new == true ? "NEW" : ""}</div>
+      <div className={`${item?.new == true ? "new-text" : ""}`}>{item?.new == true ? "NEW" : ""}</div>
     </div>
   )
 }
